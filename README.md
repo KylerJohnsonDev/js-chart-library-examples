@@ -1,3 +1,9 @@
+To run locally:
+
+1. Clone this repo
+2. From the root of the project, run `npm install` to install dependencies
+3. Run `npm run dev` to start the development server
+
 # Chart Libraries
 
 ## 1. D3.js
