@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="bar-d3.js"></script>
-  <script src="bar-echarts.js"></script>
-  <script src="bar-chartjs.js"></script>
-  <script src="bar-apexcharts.js"></script>
-  <script src="bar-highcharts.js"></script>
-  <script src="bar-uplot.js"></script>
-  <meta charset="UTF-8">
-  <title>Bar Chart Comparison</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uplot@1.6.27/dist/uPlot.min.css">
-  <link rel="stylesheet" type="text/css" href="../../style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/apexcharts@5.3.3/dist/apexcharts.min.js"></script>
-  <script src="https://code.highcharts.com/12.3/highcharts.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uplot@1.6.27/dist/uPlot.iife.min.js"></script>
-  <style>
-    body {
-      background: #f5f6fa;
-      font-family: Arial, sans-serif;
-    }
-    .dashboard {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
-        /* justify-content: center; */
-    }
- 
-    .chart-area {
-      width: 320px;
-      height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
+    <script src="bar-d3.js"></script>
+    <script src="bar-echarts.js"></script>
+    <script src="bar-chartjs.js"></script>
+    <script src="bar-apexcharts.js"></script>
+    <script src="bar-highcharts.js"></script>
+    <script src="bar-uplot.js"></script>
+    <meta charset="UTF-8">
+    <title>Bar Chart Comparison</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uplot@1.6.27/dist/uPlot.min.css">
+    <link rel="stylesheet" type="text/css" href="../../public/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../public/index.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@5.3.3/dist/apexcharts.min.js"></script>
+    <script src="https://code.highcharts.com/12.3/highcharts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uplot@1.6.27/dist/uPlot.iife.min.js"></script>
+    <style>
+        body {
+            background: var(--bg, #dfeeea);
+            font-family: Arial, sans-serif;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            /* justify-content: center; */
+        }
+
+        .chart-area {
+            width: 320px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-  <h1>Bar Chart Comparison</h1>
+<div class="container">
+    <h1 class="page-title">Bar Chart Comparison</h1>
     <nav style="margin-bottom:24px; font-size:1.1em;">
         <a href="../index.html">Home</a> &gt; Bar Chart Comparison
     </nav>
-  <div class="dashboard">
-    <div class="card">
-      <h2>D3.js</h2>
-      <div class="chart-area">
-        <svg id="d3-bar" width="320" height="220"></svg>
-      </div>
+    <div class="dashboard">
+        <div class="card">
+            <h2>D3.js</h2>
+            <div class="chart-area">
+                <svg id="d3-bar" width="320" height="220"></svg>
+            </div>
+        </div>
+        <div class="card">
+            <h2>ECharts</h2>
+            <div class="chart-area">
+                <div id="echarts-bar" style="width: 320px; height: 220px;"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Chart.js</h2>
+            <div class="chart-area">
+                <canvas id="chartjs-bar" width="320" height="220"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <h2>ApexCharts</h2>
+            <div class="chart-area">
+                <div id="apexcharts-bar"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Highcharts</h2>
+            <div class="chart-area">
+                <div id="highcharts-bar" style="width:320px; height:220px;"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>uPlot</h2>
+            <div class="chart-area">
+                <div id="uplot-bar" style="width:320px; height:220px;"></div>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <h2>ECharts</h2>
-      <div class="chart-area">
-        <div id="echarts-bar" style="width: 320px; height: 220px;"></div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>Chart.js</h2>
-      <div class="chart-area">
-        <canvas id="chartjs-bar" width="320" height="220"></canvas>
-      </div>
-    </div>
-    <div class="card">
-      <h2>ApexCharts</h2>
-      <div class="chart-area">
-        <div id="apexcharts-bar"></div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>Highcharts</h2>
-      <div class="chart-area">
-        <div id="highcharts-bar" style="width:320px; height:220px;"></div>
-      </div>
-    </div>
-    <div class="card">
-  <h2>uPlot</h2>
-      <div class="chart-area">
-        <div id="uplot-bar" style="width:320px; height:220px;"></div>
-      </div>
-    </div>
-  </div>
-  </div>
-    <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      renderD3BarChart();
-      renderEChartsBarChart();
-      renderChartJSBarChart();
-      renderApexChartsBarChart();
-      renderHighchartsBarChart();
-      renderUPlotBarChart();
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        renderD3BarChart();
+        renderEChartsBarChart();
+        renderChartJSBarChart();
+        renderApexChartsBarChart();
+        renderHighchartsBarChart();
+        renderUPlotBarChart();
     });
-  </script>
+</script>
 </body>
 </html>
