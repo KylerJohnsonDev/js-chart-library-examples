@@ -1,3 +1,5 @@
+This repo was created to demo the use of AI to implement charting libraries and perform a comparitive analysis for [this youtube video](https://youtu.be/iVmoBTvbwsE).
+
 To run locally:
 
 1. Clone this repo
