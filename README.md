@@ -1,10 +1,14 @@
-This repo was created to demo the use of AI to implement charting libraries and perform a comparitive analysis for [this youtube video](https://youtu.be/iVmoBTvbwsE).
+This repo was created to demo the use of AI to implement charting libraries and perform a comparative analysis for each library.
+
+[![We Used AI to Compare & Demo 6 JavaScript Charting Libraries](https://img.youtube.com/vi/iVmoBTvbwsE/0.jpg)](https://youtu.be/iVmoBTvbwsE)
 
 To run locally:
 
 1. Clone this repo
 2. From the root of the project, run `npm install` to install dependencies
 3. Run `npm run dev` to start the development server
+
+![Landing Page Screenshot](./landing_page_screenshot.png)
 
 # Chart Libraries
 
