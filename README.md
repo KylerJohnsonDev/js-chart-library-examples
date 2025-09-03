@@ -8,6 +8,8 @@ To run locally:
 2. From the root of the project, run `npm install` to install dependencies
 3. Run `npm run dev` to start the development server
 
+![Landing Page Screenshot](./landing_page_screenshot.png)
+
 # Chart Libraries
 
 ## 1. D3.js
